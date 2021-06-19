@@ -1,0 +1,75 @@
+<div class="container">
+  <form class="order" *ngIf="!orderDone">
+    <div class="order__formgroup">
+      <p class="order__title">Choose your payments:</p>
+
+      <input
+        type="radio"
+        name="payments"
+        id="cash"
+        value="1"
+        [(ngModel)]="paymentsId"
+      />
+      <label class="order__item" for="cash">Cash</label><br />
+
+      <input
+        type="radio"
+        name="payments"
+        id="visa"
+        value="2"
+        [(ngModel)]="paymentsId"
+      />
+      <label class="order__item" for="visa">Visa/Mastercard</label><br />
+
+      <input
+        type="radio"
+        name="payments"
+        id="privat"
+        value="3"
+        [(ngModel)]="paymentsId"
+      />
+      <label class="order__item" for="privat">Privat24</label>
+    </div>
+
+    <div class="order__formgroup">
+      <p class="order__title">Choose preferable delivery:</p>
+
+      <input
+        type="radio"
+        name="delivery"
+        id="nposhta"
+        value="1"
+        [(ngModel)]="deliveryId"
+      />
+      <label class="order__item" for="nposhta">Nova Poshta</label><br />
+
+      <input
+        type="radio"
+        name="delivery"
+        id="mist"
+        value="2"
+        [(ngModel)]="deliveryId"
+      />
+      <label class="order__item" for="mist">Mist Express</label><br />
+
+      <input
+        class="kiki-input"
+        type="radio"
+        name="delivery"
+        id="kiki"
+        value="3"
+        [(ngModel)]="deliveryId"
+      />
+      <label class="order__item" for="kiki">Kiki's delivery service =^^=</label>
+      <img class="kiki" src="assets/kiki.png" alt="kiki" />
+    </div>
+    <button class="order__btn btn" (click)="createOrder()">
+      Create your order now!!
+    </button>
+  </form>
+
+  <div *ngIf="orderDone" class="done">
+    <p>Congratulations!! Your order has been sent!</p>
+    <a routerLink="/">Back to shop</a>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="account account--create" *ngIf="!isLogin">
+    <h2>Have no account? Create new one!!</h2>
+    <p class="account__link" (click)="toggleLogin()">
+      Or click here to login...
+    </p>
+    <form>
+      <div class="account__form-group">
+        <label for="create-username">Name</label>
+        <input
+          type="text"
+          id="create-username"
+          name="create"
+          [(ngModel)]="name"
+          required
+        />
+      </div>
+      <div class="account__form-group">
+        <label for="create-phone">Phone</label>
+        <input
+          type="phone"
+          id="create-phone"
+          name="create"
+          [(ngModel)]="phone"
+          required
+        />
+      </div>
+      <div class="account__form-group">
+        <label for="create-email">Email</label>
+        <input
+          type="email"
+          id="create-email"
+          name="create"
+          [(ngModel)]="email"
+          required
+        />
+      </div>
+      <div class="account__form-group">
+        <label for="create-passwd">Password</label>
+        <input
+          type="password"
+          id="create-passwd"
+          name="create"
+          [(ngModel)]="passwd"
+          required
+        />
+      </div>
+      <div class="account__form-group">
+        <label for="create-passwdConfirm">Confirm password</label>
+        <input
+          type="password"
+          id="create-passwdConfirm"
+          name="create"
+          [(ngModel)]="passwdConfirm"
+          required
+        />
+      </div>
+      <button
+        class="account-btn btn"
+        (click)="createAccount($event)"
+        routerLink="/"
+      >
+        Create account!
+      </button>
+    </form>
+  </div>
+  <div class="account account--login" *ngIf="isLogin">
+    <h2>Login to your account.</h2>
+    <p class="account__link" (click)="toggleLogin()">Or create new one...</p>
+    <form>
+      <div class="account__form-group">
+        <label for="login-email">Email</label>
+        <input
+          type="email"
+          id="login-email"
+          name="create"
+          [(ngModel)]="email"
+          required
+        />
+      </div>
+      <div class="account__form-group">
+        <label for="login-passwd">Password</label>
+        <input
+          type="password"
+          id="login-passwd"
+          name="create"
+          [(ngModel)]="passwd"
+          required
+        />
+      </div>
+      <button class="account-btn btn" (click)="login($event)" routerLink="/">
+        Login
+      </button>
+    </form>
+  </div>
+</div>

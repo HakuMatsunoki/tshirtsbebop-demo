@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="order-details" *ngIf="order">
+    <h3 class="order-details__title">Order details</h3>
+    <div class="order-details__info">
+      <p class="order-details__sub"><span>Order:</span>{{ order.id }}</p>
+      <p class="order-details__sub"><span>Date:</span>{{ orderDate }}</p>
+      <p class="order-details__sub order-details__sub--accent">
+        <span>Total price:</span>{{ totalPrice }}$
+      </p>
+      <p class="order-details__sub">
+        <span>Payment:</span>{{ order.payments }}
+      </p>
+      <p class="order-details__sub">
+        <span>Delivery:</span>{{ order.delivery }}
+      </p>
+      <p class="order-details__sub order-details__sub--accent">
+        <span>Status:</span>{{ order.status }}
+      </p>
+    </div>
+
+    <h3 class="order-details__title">Ordered products</h3>
+    <div
+      class="order-details__item"
+      *ngFor="let item of service.orderDetails"
+      routerLink="{{ '/' + item.id }}"
+    >
+      <span class="order-details__name">{{ item.name }}</span>
+      &nbsp;
+      <span class="order-details__type">({{ item.type }}, </span>
+      <span class="order-details__size">{{ item.size }}, </span>
+      <span
+        class="order-details__color"
+        style="{{ 'background-color:' + item.color + ';' }}"
+        >&nbsp;</span
+      >
+      <span class="order-details__type">)</span>
+      &nbsp;-&nbsp;
+      <span class="order-details__quantity">{{ item.quantity }}</span>
+      &nbsp;&times;&nbsp;
+      <span class="order-details__price">{{ item.price }}$</span>
+    </div>
+  </div>
+</div>

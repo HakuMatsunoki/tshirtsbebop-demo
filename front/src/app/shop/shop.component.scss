@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.item {
+	width: calc(25% - 5px);
+	border: 1px dashed white;
+	background-color: lavender;
+	padding: 2px;
+	margin-bottom: 20px;
+	min-height: 300px;
+	cursor: pointer;
+
+	&__img {
+		width: 100%;
+		height: 200px;
+	}
+
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__description {
+		padding: 10px;
+	}
+
+	&__title {
+		text-align: center;
+		display: block;
+	}
+
+	&__subtitle {
+		text-decoration: underline;
+	}
+
+	&__price {
+		color: blue;
+		font-weight: 700;
+	}
+}

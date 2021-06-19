@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-out;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 900px;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+button {
+  display: block;
+  outline: none;
+  cursor: pointer;
+  border: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 5px lightsteelblue;
+    transform: scale(1.1);
+  }
+}
+
+button.btn {
+  height: 40px;
+  padding: 0 20px;
+  border: 1px dashed white;
+  text-transform: uppercase;
+  color: white;
+}

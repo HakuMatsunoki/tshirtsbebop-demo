@@ -1,0 +1,84 @@
+<div class="container">
+  <h2>{{ service.productDetails.name }}</h2>
+  <div class="details">
+    <div class="details__image">
+      <img
+        src="{{
+          'https://tshirts-shop.herokuapp.com/images/' +
+            service.productDetails.id +
+            '.jpg'
+        }}"
+        alt="photo"
+      />
+    </div>
+    <div class="details__info">
+      <div class="details__text">
+        <span>Categories: </span>
+        <ul class="details__categories">
+          <li *ngFor="let category of service.productDetails.categories">
+            {{ category }}
+          </li>
+        </ul>
+      </div>
+      <p class="details__text">
+        <span>Material: </span>{{ service.productDetails.material }}
+      </p>
+      <p class="details__text">
+        <span>Type: </span>{{ service.productDetails.type }}
+      </p>
+      <p class="details__text">
+        <span class="details__price">{{ service.productDetails.price }}$</span>
+      </p>
+
+      <form class="form">
+        <span class="details__text"><span>Color:</span></span>
+        <div class="form__colors">
+          <div
+            class="form__group form__group--colors"
+            *ngFor="let color of service.colors; let i = index"
+          >
+            <input
+              type="radio"
+              id="{{ 'color-' + color }}"
+              name="color"
+              value="{{ color }}"
+              (change)="onItemChange($event, color)"
+            />
+            <label
+              for="{{ 'color-' + color }}"
+              style="{{ 'background-color:' + color + ';' }}"
+            ></label>
+          </div>
+        </div>
+
+        <span class="details__text"><span>Size:</span></span>
+        <div class="form__sizes">
+          <div
+            class="form__group form__group--sizes"
+            *ngFor="let size of service.sizes; let i = index"
+          >
+            <input
+              type="radio"
+              id="{{ 'size-' + size }}"
+              name="size"
+              value="{{ size }}"
+              (change)="onItemChange($event, size)"
+            />
+            <label for="{{ 'size-' + size }}">{{ size }}</label>
+          </div>
+        </div>
+        <button
+          *ngIf="service.me.isLoggedIn"
+          class="details__add-btn btn"
+          (click)="addToCart($event)"
+          [disabled]="!color || !size"
+        >
+          Add to cart
+        </button>
+        <p class="details__need-login" *ngIf="!service.me.isLoggedIn">
+          Please, <span routerLink="/login">login</span> to continue shopping!
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

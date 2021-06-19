@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="cart">
+    <h2>Your cart:</h2>
+
+    <ul>
+      <li *ngFor="let item of service.cartItems" class="cart__item">
+        <div class="cart__img" routerLink="{{ '/' + item.tshirtId }}">
+          <img
+            src="{{
+              'https://tshirts-shop.herokuapp.com/images/' +
+                item.tshirtId +
+                '.jpg'
+            }}"
+            alt="item image"
+          />
+        </div>
+        <p class="cart__item-title">
+          <span class="cart__item-name">{{ item.name }}</span>
+          <span class="cart__item-details"
+            >({{ item.color }}, {{ item.size }})</span
+          >
+        </p>
+        <p class="cart__item-price">{{ item.price }}$ &times;</p>
+        <input
+          type="text"
+          [(ngModel)]="item.quantity"
+          class="cart__item-quantity"
+        />
+        <button class="cart__item-remove" (click)="deleteItem(item.id)">
+          &times;
+        </button>
+      </li>
+    </ul>
+
+    <p class="cart__total">{{ total }}$</p>
+
+    <div class="cart__links">
+      <a class="cart__link" routerLink="{{ '/' }}">Back to the shop..</a>
+      <a
+        *ngIf="service.cartItems.length > 0"
+        class="cart__link"
+        routerLink="{{ '/order' }}"
+        >Continue..</a
+      >
+    </div>
+  </div>
+</div>

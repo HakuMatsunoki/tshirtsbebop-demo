@@ -1,0 +1,57 @@
+.order {
+  &__title {
+    text-transform: uppercase;
+    color: royalblue;
+    margin-bottom: 15px;
+  }
+
+  &__formgroup {
+    margin-bottom: 30px;
+
+    &:nth-child(2) {
+      position: relative;
+    }
+  }
+
+  & input {
+    display: none;
+
+    &:checked + label {
+      transform: scale(1.2) rotate(2deg);
+      box-shadow: 12px 2px 2px 1px darkorange;
+    }
+  }
+
+  & label {
+    display: inline-block;
+    color: darkgreen;
+    margin-bottom: 7px;
+    padding: 0 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .kiki-input:checked ~ .kiki {
+    display: block;
+  }
+
+  .kiki {
+    display: none;
+    position: absolute;
+    left: calc(50% - 150px);
+    bottom: -25px;
+    z-index: 2;
+  }
+
+  &__btn {
+    background-color: darkgoldenrod;
+    margin: 0 auto;
+  }
+}
+
+.done {
+  p {
+    font-size: 30px;
+    color: coral;
+  }
+}

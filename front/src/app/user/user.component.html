@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="user-info">
+    <h3>Your contacts:</h3>
+    <p>
+      Name: <span>{{ service.me.name }}</span
+      ><br />
+      Email: <span>{{ service.me.email }}</span
+      ><br />
+      Phone: <span>{{ service.me.phone }}</span>
+    </p>
+  </div>
+  <div class="orders">
+    <h3>Your orders:</h3>
+    <table>
+      <tbody>
+        <tr>
+          <th>Date:</th>
+          <th>Status:</th>
+        </tr>
+        <tr
+          *ngFor="let order of orders; let i = index"
+          (click)="showDetails(i)"
+        >
+          <td>{{ order.date }}</td>
+          <td>{{ order.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

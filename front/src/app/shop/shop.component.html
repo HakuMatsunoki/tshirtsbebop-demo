@@ -1,0 +1,29 @@
+<div class="container">
+  <div
+    *ngFor="let product of service.products; let i = index"
+    class="item"
+    routerLink="{{ '/' + product.id }}"
+  >
+    <figure class="item__img">
+      <img
+        src="{{
+          'https://tshirts-shop.herokuapp.com/images/' + product.id + '.jpg'
+        }}"
+        alt="photo"
+      />
+    </figure>
+    <div class="item__description">
+      <p>
+        <strong class="item__title">{{ product.name }}</strong>
+      </p>
+      <p><span class="item__subtitle">Type:</span> {{ product.type }}</p>
+      <p>
+        <span class="item__subtitle">Material:</span> {{ product.material }}
+      </p>
+      <p>
+        <span class="item__subtitle">Price:</span>
+        <span class="item__price"> {{ product.price }}$</span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+h3 {
+  text-align: center;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.user-info {
+  text-align: left;
+  color: rebeccapurple;
+  margin-bottom: 40px;
+
+  & p {
+    background-color: snow;
+    padding: 20px;
+  }
+
+  & span {
+    color: firebrick;
+    padding-left: 10px;
+  }
+}
+
+.orders {
+  color: darkolivegreen;
+
+  & table {
+    width: 100%;
+  }
+
+  & tr {
+    height: 30px;
+
+    &:first-child {
+      background-color: burlywood;
+    }
+
+    &:nth-child(2n-1):not(:first-child) {
+      background-color: lemonchiffon;
+    }
+
+    &:nth-child(2n) {
+      background-color: lavender;
+    }
+
+    &:not(:first-child) {
+      cursor: pointer;
+
+      &:hover {
+        background-color: gold;
+      }
+    }
+  }
+
+  & th {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  & td {
+  }
+}

@@ -1,0 +1,31 @@
+<div class="container container--center">
+  <h1 routerLink="/">{{ title }}</h1>
+
+  <div class="account" *ngIf="service.me.isLoggedIn">
+    <p>
+      You're logged in as: <span routerLink="/me">{{ service.me.name }}</span>
+    </p>
+    <a routerLink="/cart">Cart</a>
+    <a (click)="service.logout()" routerLink="/">Log out</a>
+  </div>
+
+  <div class="account" *ngIf="!service.me.isLoggedIn">
+    <p>You're not logged in...</p>
+    <a routerLink="/login">Log in</a>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <div class="info">
+    <p>
+      <span>
+        E-mail:
+        <a href="mailto:hakumatsunoki@gmail.com">hakumatsunoki@gmail.com</a>
+      </span>
+      <span>
+        Skype:
+        <a href="skype:haku.root?chat">haku.root</a>
+      </span>
+    </p>
+  </div>
+</div>

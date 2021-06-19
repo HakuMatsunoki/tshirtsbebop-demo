@@ -1,0 +1,119 @@
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.details {
+  display: flex;
+  padding-top: 50px;
+
+  &__image {
+    width: 400px;
+    height: 500px;
+    border: 1px solid gainsboro;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    margin-left: 40px;
+    padding-top: 20px;
+  }
+
+  &__text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__categories {
+    & li {
+      list-style: none;
+    }
+  }
+
+  &__price {
+    font-size: 30px;
+    color: midnightblue;
+  }
+
+  &__add-btn {
+    background-color: crimson;
+
+    &:disabled {
+      background-color: dimgray;
+    }
+  }
+
+  &__need-login {
+    color: rosybrown;
+    border: 1px dotted darkolivegreen;
+    display: inline-block;
+    padding: 5px 10px;
+
+    & span {
+      cursor: pointer;
+      color: lightslategray;
+
+      &:hover {
+        color: orangered;
+      }
+    }
+  }
+}
+
+.form {
+  &__colors,
+  &__sizes {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+}
+
+.form__group {
+  &--colors {
+    & input {
+      display: none;
+
+      &:checked ~ label {
+        transform: scale(1.25, 1.25) rotate(15deg);
+      }
+    }
+
+    & label {
+      display: block;
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 1px solid black;
+    }
+  }
+
+  &--sizes {
+    & input {
+      display: none;
+
+      &:checked ~ label {
+        font-weight: 700;
+        transform: scale(1.25, 1.25) rotate(15deg);
+      }
+    }
+
+    & label {
+      display: block;
+      margin-right: 25px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    text-transform: uppercase;
+  }
+}
