@@ -43,6 +43,6 @@ _!!config.env file haven't included in repository.._
 https://github.com/HakuMatsunoki
 
 ## Contacts:
-hakumatsunoki@gmail.com
-+380974669226
-Skype: haku.root
+hakumatsunoki@gmail.com    
++380974669226    
+Skype: haku.root    
